@@ -1,5 +1,7 @@
 package com.georgechy.game.buckshotroulette;
 
+import java.util.Stack;
+
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -17,6 +19,18 @@ public class AppTest
     @Test
     public void liveBlankTest()
     {
-        assertTrue( true );
+        ShellRandomizer shellRandomizer = new ShellRandomizer();
+        Stack<Shell> shells = shellRandomizer.getShells();
+        int numLive = 0;
+        int numBlank = 0;
+        for (Shell shell : shells) {
+            if (shell.isLive) {
+                numLive++;
+            } else {
+                numBlank++;
+            }
+        }
+        System.out.println("Live: " + numLive + " Blank: " + numBlank);
+        assertTrue( numBlank > 0 && numLive > 0 );
     }
 }
