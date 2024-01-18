@@ -8,9 +8,9 @@ public class ShellRandomizer {
     private Stack<Shell> shells;
     Random rand = new Random();
 
-    int i;
-    int numLive = 0;
-    int numBlank = 0;
+    private int i;
+    private int numLive = 0;
+    private int numBlank = 0;
 
     /* Randomizes How many Shells there are in the stack from 2-8 */
     private int randomizeNumShells() {
