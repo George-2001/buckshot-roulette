@@ -39,6 +39,28 @@ public class Game {
         System.out.println("Player Health: " + playerHealth);
         System.out.println("Dealer Health: " + dealerHealth);
 
+        do{
+            turn++;
+            System.out.println("Turn: " + turn);
+            Shotgun playerShotgun = new Shotgun();
+            Shotgun dealerShotgun = new Shotgun();
+            playerShotgun.load();
+            dealerShotgun.load();
+            playerShotgun.rack();
+            dealerShotgun.rack();
+            playerShotgun.fire();
+            dealerShotgun.fire();
+            if (playerShotgun.getSawedOff()) {
+                playerHealth -= 2;
+            }
+            if (dealerShotgun.getSawedOff()) {
+                dealerHealth -= 2;
+            }
+            System.out.println("Player Health: " + playerHealth);
+            System.out.println("Dealer Health: " + dealerHealth);
+
+        }while(playerHealth > 0 && dealerHealth > 0);
+
     }
     
 }

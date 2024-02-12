@@ -6,6 +6,8 @@ public class Shotgun {
     ShellRandomizer shellRandomizer = new ShellRandomizer();
     Shell chamberedShell;
     boolean sawedOff = false;
+    int numBlank = 0;
+    int numLive = 0;
 
     /* Contructor */
     public Shotgun(){
@@ -24,8 +26,8 @@ public class Shotgun {
     }
 
     /* shotgun is loaded, ONLY WHEN EMPTY */
-    public void load(){
-        shellStack = shellRandomizer.getShells();
+    public void load(Stack<Shell> shellStack){
+        this.shellStack = shellStack;
     }
     
     /* shotgun is racked, remove top shell */
@@ -72,14 +74,26 @@ public class Shotgun {
     // }
 
 
-    public void getShellsRemaining(){
-
+    public int getShellsRemaining(){
+        return shellStack.size();
     }
     public int getNumBlankShells(){
-
+        numBlank = 0;
+        for (Shell shell : shellStack) {
+            if (shell.isLive == false) {
+                numBlank++;
+            }
+        }
+        return numBlank;
     }
     public int getNumLiveShells(){
-
+        numLive = 0;
+        for (Shell shell : shellStack) {
+            if (shell.isLive) {
+                numLive++;
+            }
+        }
+        return numLive;
     }
 
 }

@@ -17,7 +17,7 @@ public class AppTest
 
      /* Asserts that there is at least one blank and one live shell in the stack of shells */
     @Test
-    public void liveBlankTest()
+    public void liveBlankMinOneTest()
     {
         ShellRandomizer shellRandomizer = new ShellRandomizer();
         Stack<Shell> shells = shellRandomizer.getShells();
@@ -32,5 +32,8 @@ public class AppTest
         }
         System.out.println("Live: " + numLive + " Blank: " + numBlank);
         assertTrue( numBlank > 0 && numLive > 0 );
-    }
+    }  
+
+    @Test
+    public void 
 }
