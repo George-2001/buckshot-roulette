@@ -39,17 +39,14 @@ public class Game {
         System.out.println("Player Health: " + playerHealth);
         System.out.println("Dealer Health: " + dealerHealth);
 
+        Dealer dealer = new Dealer();
+        
+
         do{
             turn++;
             System.out.println("Turn: " + turn);
             Shotgun playerShotgun = new Shotgun();
             Shotgun dealerShotgun = new Shotgun();
-            playerShotgun.load();
-            dealerShotgun.load();
-            playerShotgun.rack();
-            dealerShotgun.rack();
-            playerShotgun.fire();
-            dealerShotgun.fire();
             if (playerShotgun.getSawedOff()) {
                 playerHealth -= 2;
             }

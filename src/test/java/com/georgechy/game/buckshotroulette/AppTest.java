@@ -35,5 +35,13 @@ public class AppTest
     }  
 
     @Test
-    public void 
+    public void shotgunLoadTest()
+    {
+        Shotgun shotgun = new Shotgun();
+        Stack<Shell> shells = new Stack<Shell>();
+        shells.push(new Shell(true));
+        shells.push(new Shell(false));
+        shotgun.load(shells);
+        assertTrue( shotgun.checkempty() == false );
+    }
 }
