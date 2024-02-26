@@ -1,5 +1,6 @@
 package com.georgechy.game.buckshotroulette;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 import static org.junit.Assert.assertTrue;
@@ -15,12 +16,25 @@ public class AppTest
      * Rigorous Test :-)
      */
 
+     ArrayList<Shell> arrShells = new ArrayList<Shell>() {{
+        add(new Shell(true));
+        add(new Shell(true));
+        add(new Shell(true));
+        add(new Shell(true));
+        add(new Shell(false));
+        add(new Shell(false));
+        add(new Shell(false));
+        add(new Shell(false));
+     }
+    };
+     
+
      /* Asserts that there is at least one blank and one live shell in the stack of shells */
     @Test
     public void liveBlankMinOneTest()
     {
         ShellRandomizer shellRandomizer = new ShellRandomizer();
-        Stack<Shell> shells = shellRandomizer.getShells();
+        Stack<Shell> shells = shellRandomizer.getShells(arrShells);
         int numLive = 0;
         int numBlank = 0;
         for (Shell shell : shells) {
@@ -43,5 +57,25 @@ public class AppTest
         shells.push(new Shell(false));
         shotgun.load(shells);
         assertTrue( shotgun.checkempty() == false );
+    }
+
+    @Test
+    public void shellRandomizerTest()
+    {
+        int numLive = 0;
+        int numBlank = 0;
+        
+        ShellRandomizer shellRandomizer = new ShellRandomizer();
+        Stack<Shell> shells = shellRandomizer.getShells(arrShells);
+        for (Shell shell : shells) {
+            if (shell.isLive) {
+                numLive++;
+            } else {
+                numBlank++;
+            }
+            if(numLive - 3 > numBlank || numBlank - 3 > numLive)
+                assertTrue(false);
+        }
+        assertTrue(true);
     }
 }

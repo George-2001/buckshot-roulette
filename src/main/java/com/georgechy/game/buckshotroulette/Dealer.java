@@ -26,7 +26,7 @@ public class Dealer {
             case 1:
                 switch (round) {
                     case 1:
-                    
+                        shellStack.add(new Shell(true));
 
                         break;
                     case 2:

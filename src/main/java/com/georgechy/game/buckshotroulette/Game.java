@@ -15,7 +15,7 @@ public class Game {
 
         switch (game) {
             case 1:
-                
+                gameOneRoundOne();
                 break;
 
             case 2:
@@ -32,7 +32,7 @@ public class Game {
     }
     
 
-    public void roundOne() {
+    public void gameOneRoundOne() {
         playerHealth = 2;
         dealerHealth = 2;
         System.out.println("Round One");
@@ -45,16 +45,9 @@ public class Game {
         do{
             turn++;
             System.out.println("Turn: " + turn);
-            Shotgun playerShotgun = new Shotgun();
-            Shotgun dealerShotgun = new Shotgun();
-            if (playerShotgun.getSawedOff()) {
-                playerHealth -= 2;
-            }
-            if (dealerShotgun.getSawedOff()) {
-                dealerHealth -= 2;
-            }
             System.out.println("Player Health: " + playerHealth);
             System.out.println("Dealer Health: " + dealerHealth);
+            
 
         }while(playerHealth > 0 && dealerHealth > 0);
 
