@@ -7,7 +7,7 @@ public class ShellRandomizer {
     private Stack<Shell> shells;
     Random rand = new Random();
 
-    private int i;
+
     private int numLive = 0;
     private int numBlank = 0;
 
@@ -16,16 +16,11 @@ public class ShellRandomizer {
     }
 
     /* Randomizes How many Shells there are in the stack from 2-8 */
-    private int randomizeNumShells() {
-        int numShells;
-        numShells = rand.nextInt(7) + 2;
-        return numShells;
 
-    }
     /* Randomizes what each shell is with a minimum of 1 blank and 1 live shell */
-        private Stack<Shell> randomizeShellOrder() {
+        private Stack<Shell> randomizeShellOrder(int numShells) {
         Stack<Shell> shellStack = new Stack<Shell>();
-        i = randomizeNumShells();
+        int i = numShells;
         boolean isLive;
         numLive = 0;
         numBlank = 0;
@@ -52,8 +47,8 @@ public class ShellRandomizer {
     }
     
     /* Returns a set of shells in a random order */
-    public Stack<Shell> getShells() {
-        shells = randomizeShellOrder();
+    public Stack<Shell> getShells(int numShells) {
+        shells = randomizeShellOrder(numShells);
         return shells;
     }
 }

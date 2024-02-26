@@ -26,10 +26,8 @@ public class Dealer {
             case 1:
                 switch (round) {
                     case 1:
-                    for (int i = 0; i < 3; i++) {
-                        shellStack.push(new Shell(rand.nextBoolean()));
-                        
-                    }
+                    
+
                         break;
                     case 2:
                         break;
