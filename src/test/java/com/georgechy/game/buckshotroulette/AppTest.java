@@ -7,6 +7,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.georgechy.game.buckshotroulette.Entities.Shell;
+import com.georgechy.game.buckshotroulette.Entities.Shotgun;
+import com.georgechy.game.buckshotroulette.Tools.ShellRandomizer;
+
 /**
  * Unit test for simple App.
  */

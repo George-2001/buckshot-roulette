@@ -1,5 +1,7 @@
 package com.georgechy.game.buckshotroulette;
 
+import com.georgechy.game.buckshotroulette.Entities.Dealer;
+
 public class Game {
 
     int round = 0;
